@@ -1,0 +1,17 @@
+{
+  "name": "cordova-plugin-cortexdecoder",
+  "version": "1.0.0",
+  "description": "Cordova plugin for Cortex lib",
+  "cordova": {
+    "id": "cordova-plugin-cortexdecoder",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "Yury",
+  "license": "ISC"
+}

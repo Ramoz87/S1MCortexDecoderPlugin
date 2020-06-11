@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0" id="cordova-plugin-cortexdecoder" version="1.0.0">
+	<name>S1MCortexDecoderPlugin</name>
+	<description>Cordova plugin for Cortex lib</description>
+	<js-module src="www/S1MCortexDecoderPlugin.js" name="S1MCortexDecoderPlugin">
+		<clobbers target="S1MCortexDecoderPlugin"/>
+	</js-module>
+	<platform name="ios">
+		<config-file target="config.xml" parent="/*">
+			<feature name="S1MCortexDecoderPlugin">
+				<param name="ios-package" value="CortexDecoderPlugin"/>
+			</feature>
+		</config-file>
+        <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
+            <string>Camera is required for scanning codes</string>
+        </edit-config>
+        <dependency id="cordova-plugin-add-swift-support" version="2.0.2"/>
+        <header-file src="src/ios/Scanner/CortexDecoderLibrary-Bridging-Header.h"/>
+        <header-file src="lib/CortexDecoder/CortexDecoderLibrary.h"/>
+        <source-file src="src/ios/CortexDecoderPlugin.swift"/>
+        <source-file src="src/ios/Scanner/ScannerProcessor.swift"/>
+        <source-file src="src/ios/Scanner/ScanResultDecoder.swift"/>
+        <source-file src="src/ios/xib/ScanViewController.swift"/>
+        <source-file src="src/ios/xib/ScanViewController.xib"/>
+        <source-file src="lib/CortexDecoder/libEnterpriseCortexDecoderLibrary.a" framework="true"/>
+        <framework src="libxml2.2.dylib"/>
+	</platform>
+</plugin>
+
